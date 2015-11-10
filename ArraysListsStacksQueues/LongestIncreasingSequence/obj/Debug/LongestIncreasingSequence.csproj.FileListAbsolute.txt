@@ -7,3 +7,6 @@ C:\Users\alstoyanov\documents\visual studio 2013\Projects\ArraysListsStacksQueue
 D:\Git\GitHub\ArraysListsStacksQueues\LongestIncreasingSequence\bin\Debug\LongestIncreasingSequence.exe.config
 D:\Git\GitHub\ArraysListsStacksQueues\LongestIncreasingSequence\obj\Debug\LongestIncreasingSequence.exe
 D:\Git\GitHub\ArraysListsStacksQueues\LongestIncreasingSequence\obj\Debug\LongestIncreasingSequence.pdb
+D:\Git\GitHub\ArraysListsStacksQueues\LongestIncreasingSequence\bin\Debug\LongestIncreasingSequence.exe
+D:\Git\GitHub\ArraysListsStacksQueues\LongestIncreasingSequence\bin\Debug\LongestIncreasingSequence.pdb
+D:\Git\GitHub\ArraysListsStacksQueues\LongestIncreasingSequence\obj\Debug\LongestIncreasingSequence.csprojResolveAssemblyReference.cache

@@ -19,17 +19,33 @@ namespace LongestIncreasingSequence
 
             int counter = 0;
 
-            do
+
+
+
+            while (true)
             {
-                currentString.Append(array[counter]);
-                counter++;
 
-            } while (array[counter] < array[counter + 1]);
+                do
+                {
+                    currentString.Append(array[counter] + " ");
+                    counter++;
+
+                } while (array[counter] < array[counter + 1]);
 
 
-            list.Add(currentString.ToString());
-            currentString.Clear();
-            counter++;
+                list.Add(currentString.ToString());
+                currentString.Clear();
+                if (counter==array.Length)
+                {
+                    break;
+                }
+            }
+
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine(list[i]);
+            }
 
         }
     }
