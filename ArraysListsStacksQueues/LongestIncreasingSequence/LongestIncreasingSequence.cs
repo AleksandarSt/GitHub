@@ -18,24 +18,55 @@ namespace LongestIncreasingSequence
             List<string> list=new List<string>();
 
             int counter = 0;
+            int maxCounter = 0;
+            bool isLongest = false;
 
-
-
+            int maxSeqIndex=0;
 
             while (true)
             {
-
+                if (counter >= array.Length - 1)
+                {
+                    break;
+                }
+                isLongest = false;
+                currentString.Append(array[counter] + " ");
                 do
                 {
-                    currentString.Append(array[counter] + " ");
-                    counter++;
+                    if (counter >= array.Length - 1)
+                    {
+                        break;
+                    }
+                    if (array[counter] < array[counter + 1])
+                    {
+                        currentString.Append(array[counter + 1] + " ");
+                        if (maxCounter<counter)
+                        {
+                            maxCounter = counter;
+                            isLongest = true;
 
+                        }
+                        
+                    }
+                    counter++;
+                    if (counter >= array.Length-1)
+                    {
+                        break;
+                    }
                 } while (array[counter] < array[counter + 1]);
 
+                if (counter<array.Length-1&&array[counter] != array[counter + 1])
+                {
+                    counter++;
+                }
 
                 list.Add(currentString.ToString());
+                if (isLongest)
+                {
+                    maxSeqIndex = list.Count-1;
+                }
                 currentString.Clear();
-                if (counter==array.Length)
+                if (counter >= array.Length - 1)
                 {
                     break;
                 }
@@ -46,6 +77,8 @@ namespace LongestIncreasingSequence
             {
                 Console.WriteLine(list[i]);
             }
+
+            Console.WriteLine("Longest {0}",list[maxSeqIndex]);
 
         }
     }
