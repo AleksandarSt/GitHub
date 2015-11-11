@@ -10,7 +10,7 @@ namespace LongestIncreasingSequence
     {
         static void Main()
         {
-            Console.WriteLine("Enter some array elements ...");
+            Console.WriteLine("Enter array elements ...");
             int[] array = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
 
             StringBuilder currentString=new StringBuilder();
