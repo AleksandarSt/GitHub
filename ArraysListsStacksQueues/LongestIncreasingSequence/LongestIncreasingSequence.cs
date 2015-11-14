@@ -18,7 +18,8 @@ namespace LongestIncreasingSequence
             List<string> list=new List<string>();
 
             int counter = 0;
-            int maxCounter = 0;
+            int maxCounter = int.MinValue;
+            int numbersCounter=0;
             bool isLongest = false;
 
             int maxSeqIndex=0;
@@ -30,6 +31,7 @@ namespace LongestIncreasingSequence
                     break;
                 }
                 isLongest = false;
+                numbersCounter = 0;
                 currentString.Append(array[counter] + " ");
                 do
                 {
@@ -40,25 +42,30 @@ namespace LongestIncreasingSequence
                     if (array[counter] < array[counter + 1])
                     {
                         currentString.Append(array[counter + 1] + " ");
-                        if (maxCounter<counter)
+                        numbersCounter++;
+                        if (maxCounter < numbersCounter)
                         {
-                            maxCounter = counter;
+                            maxCounter = numbersCounter;
                             isLongest = true;
 
                         }
-                        
+                        counter++;
                     }
-                    counter++;
+                    else
+                    {
+                        //counter++;
+                        break;
+                    }
                     if (counter >= array.Length-1)
                     {
                         break;
                     }
                 } while (array[counter] < array[counter + 1]);
 
-                if (counter<array.Length-1&&array[counter] != array[counter + 1])
-                {
+                //if (counter<array.Length-1&&array[counter] != array[counter + 1])
+                //{
                     counter++;
-                }
+               // }
 
                 list.Add(currentString.ToString());
                 if (isLongest)
