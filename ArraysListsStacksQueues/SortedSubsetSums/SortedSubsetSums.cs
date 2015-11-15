@@ -54,6 +54,7 @@ namespace SubsetSums
                 .OrderBy(x => x.ToString().Split(' ', '+', '=').Length)
                 .ThenBy(x => x);
 
+            //Printing output
             if (seqStr.Count == 0)
             {
                 Console.WriteLine("No matching subsets.");
