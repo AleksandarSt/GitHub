@@ -10,6 +10,7 @@ namespace SubsetSums
     {
         static void Main()
         {
+            //Reading Input
             Console.WriteLine("Enter number N...");
             int sum = int.Parse(Console.ReadLine());
 
@@ -17,10 +18,14 @@ namespace SubsetSums
             int[] array = Console.ReadLine().Split(' ').Select(int.Parse).Distinct().ToArray();
 
             List<int> currSeq = new List<int>();
+
+            //List of strings for sequences who meet requirements
             List<string> seqStr = new List<string>();
 
+            //Calculating number of combinations
             int combinations = (int)Math.Pow(2, array.Length);
 
+            //Checking combination and adding sequnces to list if they do
             for (int i = 0; i < combinations; i++)
             {
                 currSeq.Clear();
@@ -44,6 +49,7 @@ namespace SubsetSums
                 }
             }
 
+            //Sorting seqStr
             var seqStrSorted = seqStr
                 .OrderBy(x => x.ToString().Split(' ', '+', '=').Length)
                 .ThenBy(x => x);
